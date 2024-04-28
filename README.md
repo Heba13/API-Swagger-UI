@@ -32,5 +32,5 @@ Run "TestNG" file in project path
   Open Charging-Report.html in a web browser to view the test report.
 
 - ## Media 
-- orangeHr Report - video.mp4 in path "reports" attached for tests record 
+- StripApisSReport - video.mp4  in path "reports" attached for tests record 
 
