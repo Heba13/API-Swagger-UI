@@ -19,13 +19,11 @@ public class ChargingStepdefs extends BaseAPI {
     @When("retrieve balance")
     public void retrieveBalance() {
         balance.retrieveBalance();
-
     }
 
     @Then("check that balance is more than Zero")
     public void checkThatBalanceIsMorethanZero() {
-        int currentBalance = recharge.chargeAmount;
-        Assert.assertNotEquals(currentBalance, 0);
+        recharge.verifyChargeAmountNotEqualZero();
     }
 
     @Then("check that currency is in USD")
@@ -37,34 +35,30 @@ public class ChargingStepdefs extends BaseAPI {
 
     @Then("check that Authorized amount is {string}")
     public void checkThatAuthorizedAmountIs(String amount) {
-        String authorizedAmount = recharge.amountAuthorized;
-        Assert.assertEquals(authorizedAmount, amount);
+         recharge.verifyAuthorizedAmount(amount);
 
     }
 
     @Then("check that card brand is {string}")
     public void checkThatCardBrandIs(String brand) {
-        String cardBrand = recharge.cardBrand;
-        Assert.assertEquals(cardBrand, brand);
+        recharge.verifyCardBrand(brand);
     }
 
     @Then("check that Expiry month  should be {string}")
     public void checkThatExpiryMounthShouldBe(String month) {
-        String expiryMonth = recharge.exp_month;
-        Assert.assertEquals(expiryMonth, month);
+        recharge.verifyExp_month(month);
+
     }
 
     @Then("check that Expiry year  should be {string}")
     public void checkThatExpiryYearShouldBe(String year) {
-        String expiryYear = recharge.exp_year;
-        Assert.assertEquals(expiryYear, year);
+        recharge.verifyExp_year(year);
     }
 
     @Then("check that schema response is correct {string}")
     public void checkThatSchemaResponseIsCorrect(String path) {
         balance.validateBalanceResponseSchema(path);
     }
-
 }
 
 
