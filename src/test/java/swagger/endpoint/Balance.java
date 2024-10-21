@@ -1,4 +1,4 @@
-package stripe.endpoint;
+package swagger.endpoint;
 
 import io.restassured.RestAssured;
 import io.restassured.config.EncoderConfig;

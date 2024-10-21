@@ -1,4 +1,4 @@
-# Automation Testing for stripe
+# Automation Testing for swagger UI
 
 This project is aimed at automating API testing using Rest Assured and Cucumber framework with BDD (Behavior-Driven Development) methodology. 
 This README file will guide you through setting up and running the tests.
@@ -14,14 +14,14 @@ This README file will guide you through setting up and running the tests.
 
 open git bash on the project directory then run command 
 ```
-git clone https://gitlab.com/vodafone11/stripe.git
+git clone https://github.com/Heba13/API-Swagger-UI.git
 ```
-Run "ChargingRunner" file in path "src/test/java/stripe/test/ChargingRunner.java"
+Run "ChargingRunner" file in path "src/test/java/swagger/test/ChargingRunner.java"
 
 ## Project Structure
-- src/test/java/stripe/test: Contains Java files for implementing test cases.
-- src/test/resources: Contains Schema file writen in jSON "schema.json" .
-- src/test/java/stripe/endpoint: Contains Api classes and step definition implementation using Rest assured library.
+- src/test/java/swagger/test: Contains Java files for implementing test cases.
+- src/test/resources: Contains Schema file written in jSON "schema.json" .
+- src/test/java/swagger/endpoint: Contains Api classes and step definition implementation using Rest assured library.
 - pom.xml: Maven project configuration file containing dependencies and plugins.
 
 - ## Test Reporting
@@ -30,5 +30,5 @@ Run "ChargingRunner" file in path "src/test/java/stripe/test/ChargingRunner.java
   Open Charging-Report.html in a web browser to view the test report.
 
 - ## Media 
-- StripApisSReport - video.mp4  in path "reports" attached for tests record 
+- 
 

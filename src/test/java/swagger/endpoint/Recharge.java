@@ -1,4 +1,4 @@
-package stripe.endpoint;
+package swagger.endpoint;
 
 import io.restassured.RestAssured;
 import io.restassured.config.EncoderConfig;
@@ -8,7 +8,6 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
 
 public class Recharge extends BaseAPI {
     public  int  chargeAmount ;
@@ -35,7 +34,6 @@ public class Recharge extends BaseAPI {
                                         .post(Create_Charge_URL).then().assertThat().statusCode(200) ;
 
 
-         cardBrand= response.extract().body().jsonPath().getString("payment_method_details.card.brand");
          chargeAmount = response.extract().body().jsonPath().getInt("amount");
          chargeCurrency = response.extract().body().jsonPath().getString("currency");
          amountAuthorized = response.extract().body().jsonPath().getString("payment_method_details.card.amount_authorized");

@@ -1,13 +1,13 @@
-package stripe.test;
+package swagger.test;
 
-import stripe.endpoint.Balance;
-import stripe.endpoint.BaseAPI;
-import stripe.endpoint.Recharge;
+import swagger.endpoint.Balance;
+import swagger.endpoint.BaseAPI;
+import swagger.endpoint.Recharge;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-public class ChargingStepdefs extends BaseAPI {
+public class BrandsStepdefs extends BaseAPI {
     public Recharge recharge = new Recharge();
     public Balance balance = new Balance();
 
