@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/Charging-Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/StripApisSReport - video.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/endpoint/Balance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Balance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/endpoint/BaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/BaseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/endpoint/Recharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Recharge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/test/Charging.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/test/ChargingRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stripe/test/ChargingStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsStepdefs.java" afterDir="false" />
-    </list>
+    <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714498303048</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1729539015582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729539015582</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

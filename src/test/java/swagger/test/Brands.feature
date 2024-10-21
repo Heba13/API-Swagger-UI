@@ -42,21 +42,17 @@ Feature: Brands
     And   error message for when retrieve not existing a brand should be returned in response "<error message>"
     Examples:
       | id         | code | error message         | name        | description|
-      | 64b712dd49 | 422  | Unable to fetch brand | name        | description|
+      | 64b712dd49 | 422  | Unable to update brands | name        | description|
 
-  Scenario Outline: check that API throws an error when attempting to update non-existent brand.
+  Scenario Outline: check that API throws an error when attempting to delete non-existent brand.
     When  delete brand by it's "<id>"
     Then  response status code should be "<code>"
     And   error message for when retrieve not existing a brand should be returned in response "<error message>"
     Examples:
       | id         | code | error message         |
-      | 64b712dd49 | 422  | Unable to fetch brand |
+      | 64b712dd49 | 422  | Unable to delete brand|
 
 
 
-    Then  check that schema response is correct "<schemaPath>"
 
-    Examples:
-      | schemaPath  |
-      | schema.json |
 
