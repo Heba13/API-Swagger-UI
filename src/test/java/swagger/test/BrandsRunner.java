@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
     @CucumberOptions(
             features = "src/test/java/swaggere/test/Brands.feature",
             glue = {"swagger/test"},
-            plugin = {"html:reports/Charging-Report.html"},
+            plugin = {"html:reports/Brands.html"},
             monochrome = true
     )
 

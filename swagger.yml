@@ -1,0 +1,68 @@
+name: Run API Tests and Upload Report
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run API Tests
+        run: npm test
+
+      - name: Generate Test Report
+        run: |
+          mkdir -p reports
+          npm run generate-report
+        continue-on-error: true
+
+      - name: Upload Test Report Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: ./test-reports/
+send-report:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Test Report
+        uses: actions/download-artifact@v3
+        with:
+          name: test-report
+          path: ./test-reports/
+
+      - name: Send Report
+        run: |
+          cat ./test-reports/report.txt
+      - name: Send Email with Report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Test Report for ${{https://github.com/Heba13/API-Swagger-UI.git}}
+          body: |
+           Hi Team,
+            Please find the attached test report.
+            to: recipient@example.com
+            from: ${{secrets.EMAIL_USERNAME}}
+            attachments: ./test-reports/report.txt

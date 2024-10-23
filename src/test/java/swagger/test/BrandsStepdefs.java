@@ -1,64 +1,72 @@
 package swagger.test;
 
-import swagger.endpoint.Balance;
+import io.cucumber.java.en.And;
+import org.testng.Assert;
 import swagger.endpoint.BaseAPI;
-import swagger.endpoint.Recharge;
+import swagger.endpoint.Brands;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 public class BrandsStepdefs extends BaseAPI {
-    public Recharge recharge = new Recharge();
-    public Balance balance = new Balance();
+    public Brands brands = new Brands();
 
-    @When("create a charge with {string} with {string} using {string} with {string}")
-    public void createAChargeWith(String amount, String currency, String source, String description) {
-        recharge.createARecharge(amount, currency, source, description);
+    @When("retrieve list of brands")
+    public void retrieveListOfBrands() {
+        brands.retrieveBrands();
     }
 
-    @When("retrieve balance")
-    public void retrieveBalance() {
-        balance.retrieveBalance();
+    @Then("retrieve brands response status code should be {int}")
+    public void responseStatusCodeShouldBe(int code) {
+     brands.retrieveBrands().then().statusCode(code);
     }
 
-    @Then("check that balance is more than Zero")
-    public void checkThatBalanceIsMorethanZero() {
-        recharge.verifyChargeAmountNotEqualZero();
+    @When("list of brands should have more than one entry")
+    public void listOfBrandsShouldHaveMoreThanOneEntry() {
+        Assert.assertTrue(brands.getRetrieveBrandsSize() > 1);
     }
 
-    @Then("check that currency is in USD")
-    public void checkThatCurrencyIsInUSD() {
-        String currency = recharge.chargeCurrency;
-        Assert.assertEquals(currency, "usd");
+    @Then("each brand object should contains {string} and {string} properties.")
+    public void eachBrandObjectShouldContainsAndProperties(String name, String id) {
+        Assert.assertTrue((brands.checkAttributeNotNull(name)!= null) && (brands.checkAttributeNotNull(id)!= null));
+      //  Assert.assertTrue((brands.retrieveBrands().extract().body().jsonPath().get(name)!= null ) && (brands.retrieveBrands().extract().body().jsonPath().get(id)!= null)) ;
+    }
+
+    @When("retrieve brand by {string}")
+    public void retrieveBrandBy(String id) {
+        brands.retrieveBrandById(id);
+    }
+
+    @Then("brand name should match {string}")
+    public void brandNameShouldMatch(String name) {
+        Assert.assertEquals(brands.getBrandName(),name);
+    }
+    @Then("response for brand by id should contain one record")
+    public void responseForBrandByIdShouldContainOneRecord() {
+        Assert.assertTrue(brands.getRetrieveOneBrandSize()==1);
+    }
+
+    @When("create new brand record with {string} and {string}")
+    public void createNewBrandRecordWithAnd(String arg0, String arg1) {
+    }
+
+    @Then("error message for duplicate creation should be returned in response {string}")
+    public void errorMessageForDuplicateCreationShouldBeReturnedInResponse(String arg0) {
+    }
+
+    @And("error message for when retrieve not existing a brand should be returned in response {string}")
+    public void errorMessageForWhenRetrieveNotExistingABrandShouldBeReturnedInResponse(String arg0) {
+    }
+
+    @When("update brand {string} and {string} by it's {string}")
+    public void updateBrandAndByItS(String arg0, String arg1, String arg2) {
+    }
+
+    @When("delete brand by it's {string}")
+    public void deleteBrandByItS(String arg0) {
     }
 
 
-    @Then("check that Authorized amount is {string}")
-    public void checkThatAuthorizedAmountIs(String amount) {
-         recharge.verifyAuthorizedAmount(amount);
 
-    }
-
-    @Then("check that card brand is {string}")
-    public void checkThatCardBrandIs(String brand) {
-        recharge.verifyCardBrand(brand);
-    }
-
-    @Then("check that Expiry month  should be {string}")
-    public void checkThatExpiryMounthShouldBe(String month) {
-        recharge.verifyExp_month(month);
-
-    }
-
-    @Then("check that Expiry year  should be {string}")
-    public void checkThatExpiryYearShouldBe(String year) {
-        recharge.verifyExp_year(year);
-    }
-
-    @Then("check that schema response is correct {string}")
-    public void checkThatSchemaResponseIsCorrect(String path) {
-        balance.validateBalanceResponseSchema(path);
-    }
 }
 
 

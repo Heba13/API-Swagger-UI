@@ -2,24 +2,24 @@ Feature: Brands
 
   Scenario Outline: check that API successfully returns a list of brands.
     When  retrieve list of brands
-    Then  response status code should be "<code>"
-    And   list of brands should have more than one entry
+    Then  retrieve brands response status code should be <code>
+   Then   list of brands should have more than one entry
     And   each brand object should contains "<id>" and "<name>" properties.
     Examples:
       | code | id | name |
-      | 200  | id | name |
+      | 200  | _id | name |
 
   Scenario Outline: check that brand is successfully returned by a specific id .
     When  retrieve brand by "<id>"
-    Then  response status code should be "<code>"
-    And   brand name should match "<brand name>"
+    Then   response for brand by id should contain one record
+    And    brand name should match "<brand name>"
     Examples:
-      | id                       | code | brand name  |
-      | 64b712dd49e85607248e29ae | 200  | A Plus 7226 |
+      | id                        | brand name  |
+      | 64b712dd49e85607248e29ae  | A Plus 7226 |
 
   Scenario Outline: check that API prevents duplicate creation of brand entries
     When  create new brand record with "<name>" and "<description>"
-    Then  response status code should be "<code>"
+    Then  create new brand response status code should be <code>
     When  create new brand record with "<name>" and "<description>"
     Then  error message for duplicate creation should be returned in response "<error message>"
     Examples:
@@ -29,7 +29,7 @@ Feature: Brands
 
   Scenario Outline: check that API returns an error when attempting to retrieve a brand that does not exist
     When  retrieve brand by "<id>"
-    Then  response status code should be "<code>"
+    Then  response status code should be <code>
     And   error message for when retrieve not existing a brand should be returned in response "<error message>"
 
     Examples:
@@ -38,7 +38,7 @@ Feature: Brands
 
   Scenario Outline: check that API throws an error when attempting to update non-existent brand.
     When  update brand "<name>" and "<description>" by it's "<id>"
-    Then  response status code should be "<code>"
+    Then  response status code should be <code>
     And   error message for when retrieve not existing a brand should be returned in response "<error message>"
     Examples:
       | id         | code | error message         | name        | description|
@@ -46,7 +46,7 @@ Feature: Brands
 
   Scenario Outline: check that API throws an error when attempting to delete non-existent brand.
     When  delete brand by it's "<id>"
-    Then  response status code should be "<code>"
+    Then  response status code should be <code>
     And   error message for when retrieve not existing a brand should be returned in response "<error message>"
     Examples:
       | id         | code | error message         |
