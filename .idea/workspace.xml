@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Brands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/swagger.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Balance.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/BaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/BaseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Recharge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Brands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Brands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsStepdefs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,84 +67,91 @@
       <recent name="api_Tests.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: check that API successfully returns a list of brands.">
-    <configuration name="Scenario: User Can check schema response for balance end point (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/stripe/test/Charging.feature" />
-      <option name="GLUE" value="stripe" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="stripe" />
-      <option name="NAME_FILTER" value="^User Can check schema response for balance end point$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User Can check schema response for balance end point$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User Can check schema response for balance end point" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: User Can create Charging and retrieve assert response" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/stripe/test/Charging.feature" />
-      <option name="GLUE" value="stripe.test" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="stripe" />
-      <option name="NAME_FILTER" value="^User Can create Charging and retrieve assert response$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User Can create Charging and retrieve assert response$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User Can create Charging and retrieve assert response" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: check that API successfully returns a list of brands." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand.">
+    <configuration name="Scenario: check that API prevents duplicate creation of brand entries" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
       <option name="GLUE" value="swagger.test" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Swagger" />
-      <option name="NAME_FILTER" value="^check that API successfully returns a list of brands\.$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API successfully returns a list of brands\.$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: check that API successfully returns a list of brands." />
+      <option name="NAME_FILTER" value="^check that API prevents duplicate creation of brand entries$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API prevents duplicate creation of brand entries$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that API prevents duplicate creation of brand entries" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrandsRunner" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="stripe" />
-      <option name="PACKAGE_NAME" value="stripe.test" />
-      <option name="MAIN_CLASS_NAME" value="swagger.test.BrandsRunner" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration name="Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
+      <option name="GLUE" value="swagger.test" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Swagger" />
+      <option name="NAME_FILTER" value="^check that API returns an error when attempting to retrieve a brand that does not exist$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API returns an error when attempting to retrieve a brand that does not exist$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="D:/mobile/orangeHr/API/stripe/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="stripe" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
+    <configuration name="Scenario: check that API throws an error when attempting to delete non-existent brand." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
+      <option name="GLUE" value="swagger.test" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Swagger" />
+      <option name="NAME_FILTER" value="^check that API throws an error when attempting to delete non\-existent brand\.$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API throws an error when attempting to delete non\-existent brand\.$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that API throws an error when attempting to delete non-existent brand." />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: check that API throws an error when attempting to update non-existent brand." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
+      <option name="GLUE" value="swagger.test" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Swagger" />
+      <option name="NAME_FILTER" value="^check that API throws an error when attempting to update non\-existent brand\.$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API throws an error when attempting to update non\-existent brand\.$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that API throws an error when attempting to update non-existent brand." />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: check that brand is successfully returned by a specific id ." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
+      <option name="GLUE" value="swagger.test" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Swagger" />
+      <option name="NAME_FILTER" value="^check that brand is successfully returned by a specific id \.$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that brand is successfully returned by a specific id \.$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that brand is successfully returned by a specific id ." />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: check that API successfully returns a list of brands." />
-      <item itemvalue="Cucumber Java.Scenario: User Can create Charging and retrieve assert response" />
-      <item itemvalue="Cucumber Java.Scenario: User Can check schema response for balance end point (1)" />
-      <item itemvalue="TestNG.BrandsRunner" />
-      <item itemvalue="TestNG.D:/mobile/orangeHr/API/stripe/testNG.xml" />
+      <item itemvalue="Cucumber Java.Scenario: check that API prevents duplicate creation of brand entries" />
+      <item itemvalue="Cucumber Java.Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
+      <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand." />
+      <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to update non-existent brand." />
+      <item itemvalue="Cucumber Java.Scenario: check that brand is successfully returned by a specific id ." />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: check that API successfully returns a list of brands." />
-        <item itemvalue="TestNG.BrandsRunner" />
-        <item itemvalue="Cucumber Java.Scenario: User Can create Charging and retrieve assert response" />
-        <item itemvalue="TestNG.D:/mobile/orangeHr/API/stripe/testNG.xml" />
-        <item itemvalue="Cucumber Java.Scenario: User Can check schema response for balance end point (1)" />
+        <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand." />
+        <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to update non-existent brand." />
+        <item itemvalue="Cucumber Java.Scenario: check that API prevents duplicate creation of brand entries" />
+        <item itemvalue="Cucumber Java.Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
+        <item itemvalue="Cucumber Java.Scenario: check that brand is successfully returned by a specific id ." />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729539305207</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1729668697089</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729668697089</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
