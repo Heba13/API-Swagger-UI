@@ -11,24 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     services:
       selenium:
-        image: 'selenium/standalone-chrome:latest'
+        image: selenium/standalone-chrome:latest
         ports:
-          - '4444:4444'
-        options: '--shm-size 2g'
+          - 4444:4444
+        options:
+          --shm-size 2g
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          distribution: temurin
+          distribution: 'temurin'
           java-version: '17'
       - name: Build with Maven
         run: mvn clean compile
       - name: Run Selenium Tests
         id: test
-        env: null
-        SELENIUM_URL: 'http://localhost:4444/wd/hub'
+        env:
+        SELENIUM_URL: http://localhost:4444/wd/hub
         run: mvn test -Dselenium.server.url=$SELENIUM_URL
       - name: Send Email
         uses: hilarion5/send-mail@v1
