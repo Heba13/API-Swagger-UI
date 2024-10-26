@@ -41,16 +41,17 @@ jobs:
 
 
       - name: Send Email
-        uses: hilarion5/send-mail@v1
+        uses: dawidd6/action-send-mail@v3
         with:
             smtp-server: smtp.gmail.com
-            smtp-port: 465
+            smtp-port: 587
             smtp-secure: false
             from-email: regression.testing08@gmail.com
             to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
             username: regression.testing08@gmail.com
             password: Reg@4321
             subject: Test Email
+            content_type: text/html
             body: This is a test email sent from GitHub Actions.
             html: |
               <h1>This is a test email</h1>
