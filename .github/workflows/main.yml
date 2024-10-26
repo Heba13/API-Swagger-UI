@@ -45,7 +45,7 @@ jobs:
         with:
             smtp-server: smtp.gmail.com
             smtp-port: 465
-            smtp-secure: smtp.gmail.com
+            smtp-secure: false
             from-email: regression.testing08@gmail.com
             to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
             username: regression.testing08@gmail.com
