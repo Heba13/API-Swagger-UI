@@ -3,22 +3,23 @@ name: Selenium Test Workflow
 on:
   push:
     branches:
-      - main
+      - main  # Run the workflow on pushes to the 'main' branch
   pull_request:
     branches:
-      - main
+      - main  # Run the workflow on pull requests to the 'main' branch
 
 jobs:
   run-selenium-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use an Ubuntu runner for GitHub Actions
 
     services:
+      # Set up a service to run a Selenium server
       selenium:
-        image: selenium/standalone-chrome:latest
+        image: selenium/standalone-chrome:latest  # Use the latest Chrome image
         ports:
           - 4444:4444
         options:
-          --shm-size 2g
+          --shm-size 2g  # Increase shared memory for better performance
 
     steps:
       - name: Checkout code
@@ -27,16 +28,17 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: 'temurin'  # Java distribution
+          java-version: '17'       # Java version, change as needed
 
       - name: Build with Maven
-        run: mvn clean compile
+        run: mvn clean compile       # Compile the project
 
       - name: Run Selenium Tests
         env:
-          SELENIUM_URL: http://localhost:4444/wd/hub
-        run: mvn test -Dselenium.server.url=${{ env.SELENIUM_URL }}
+          SELENIUM_URL: http://localhost:4444/wd/hub  # URL to Selenium server
+        run: mvn test -Dselenium.server.url=$SELENIUM_URL
+
 
       - name: Send Email
         uses: hilarion5/send-mail@v1
