@@ -1,8 +1,40 @@
-name: Run API Tests and Upload Report
-on: push
+name: Selenium Test Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  my-job:
+  run-selenium-tests:
     runs-on: ubuntu-latest
+
+    services:
+
+      selenium:
+        image: selenium/standalone-chrome:latest
+        ports:
+          - 4444:4444
+        options:
+          --shm-size 2g
+
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build with Maven
+        run: mvn clean compile
+
+      - name: Run Selenium Tests
+        env:
+          SELENIUM_URL: http://localhost:4444/wd/hub
+        run: mvn test -Dselenium.server.url=$SELENIUM_URL
