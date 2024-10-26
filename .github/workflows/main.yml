@@ -47,7 +47,7 @@ jobs:
             smtp-port: 465
             smtp-secure: smtp.gmail.com
             from-email: regression.testing08@gmail.com
-            to-email: heba.emam@vodafone.com.eg
+            to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
             username: regression.testing08@gmail.com
             password: Reg@4321
             subject: Test Email
