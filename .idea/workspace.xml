@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/reports/Brands.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/BaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/BaseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Brands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/endpoint/Brands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsStepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/swagger/test/BrandsRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +36,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mobile/orangeHr/SwaggerUI/Swagger&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/mobile/SwaggerUI/Swagger",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\mobile\orangeHr\API\stripe\src\test\java\stripe\test" />
@@ -57,17 +56,17 @@
       <recent name="D:\mobile\latest\Strip\src\test\java\api_Tests\api.utilities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mobile\SwaggerUI\Swagger\.github\workflows" />
       <recent name="D:\mobile\orangeHr\API\stripe\src\test\resources" />
       <recent name="D:\mobile\orangeHr\API\stripe\src\test\java\stripe\test" />
       <recent name="D:\mobile\orangeHr\API\stripe\target" />
       <recent name="D:\mobile\latest\Strip\target\test-classes" />
-      <recent name="D:\mobile\latest\Strip\src\test\java\api_Tests\api.test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="api_Tests.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand.">
+  <component name="RunManager" selected="TestNG.BrandsRunner">
     <configuration name="Scenario: check that API prevents duplicate creation of brand entries" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
@@ -82,15 +81,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: check that API successfully returns a list of brands." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
       <option name="GLUE" value="swagger.test" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Swagger" />
-      <option name="NAME_FILTER" value="^check that API returns an error when attempting to retrieve a brand that does not exist$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API returns an error when attempting to retrieve a brand that does not exist$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
+      <option name="NAME_FILTER" value="^check that API successfully returns a list of brands\.$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that API successfully returns a list of brands\.$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: check that API successfully returns a list of brands." />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,34 +123,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: check that brand is successfully returned by a specific id ." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/swagger/test/Brands.feature" />
-      <option name="GLUE" value="swagger.test" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+    <configuration name="BrandsRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Swagger" />
-      <option name="NAME_FILTER" value="^check that brand is successfully returned by a specific id \.$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^check that brand is successfully returned by a specific id \.$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: check that brand is successfully returned by a specific id ." />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <option name="PACKAGE_NAME" value="swagger.test" />
+      <option name="MAIN_CLASS_NAME" value="swagger.test.BrandsRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: check that API successfully returns a list of brands." />
       <item itemvalue="Cucumber Java.Scenario: check that API prevents duplicate creation of brand entries" />
-      <item itemvalue="Cucumber Java.Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
       <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand." />
       <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to update non-existent brand." />
-      <item itemvalue="Cucumber Java.Scenario: check that brand is successfully returned by a specific id ." />
+      <item itemvalue="TestNG.BrandsRunner" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BrandsRunner" />
+        <item itemvalue="Cucumber Java.Scenario: check that API successfully returns a list of brands." />
         <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to delete non-existent brand." />
         <item itemvalue="Cucumber Java.Scenario: check that API throws an error when attempting to update non-existent brand." />
         <item itemvalue="Cucumber Java.Scenario: check that API prevents duplicate creation of brand entries" />
-        <item itemvalue="Cucumber Java.Scenario: check that API returns an error when attempting to retrieve a brand that does not exist" />
-        <item itemvalue="Cucumber Java.Scenario: check that brand is successfully returned by a specific id ." />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729668697089</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1729764559614</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729764559614</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
