@@ -3,17 +3,16 @@ name: Selenium Test Workflow
 on:
   push:
     branches:
-      - main
+      - main  # Run the workflow on pushes to the 'main' branch
   pull_request:
     branches:
-      - main
+      - main  # Run the workflow on pull requests to the 'main' branch
 
 jobs:
   run-selenium-tests:
     runs-on: ubuntu-latest
 
     services:
-
       selenium:
         image: selenium/standalone-chrome:latest
         ports:
@@ -35,6 +34,26 @@ jobs:
         run: mvn clean compile
 
       - name: Run Selenium Tests
+        id: test
         env:
-          SELENIUM_URL: http://localhost:4444/wd/hub
+        SELENIUM_URL: http://localhost:4444/wd/hub
         run: mvn test -Dselenium.server.url=$SELENIUM_URL
+
+      - name: Send Email
+        uses: hilarion5/send-mail@v1
+        with:
+            smtp-server: smtp.example.com
+            smtp-port: 465
+            smtp-secure: true
+            from-email: regression.testing08@gmail.com
+            to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
+            username: regression.testing08@gmail.com
+            password: Reg@4321
+            subject: Test Email
+            body: This is a test email sent from GitHub Actions.
+#            html: |
+#            <h1>GitHub Actions Selenium Test Run</h1>
+#            <p>Status: ${{ job.status }}</p>
+#            <p>Run ID: ${{ github.run_id }}</p>
+#            <p>Repository: ${{ github.repository }}</p>
+#            <p>Check the run details: <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Run Link</a></p>
