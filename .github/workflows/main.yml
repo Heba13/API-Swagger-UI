@@ -42,8 +42,8 @@ jobs:
       - name: Send Email
         uses: hilarion5/send-mail@v1
         with:
-            smtp-server: smtp.example.com
-            smtp-port: 465
+            smtp-server: smtp.gmail.com
+            smtp-port: 587
             smtp-secure: true
             from-email: regression.testing08@gmail.com
             to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
