@@ -41,4 +41,9 @@ jobs:
           username: regression.testing08@gmail.com
           password: Reg@4321
           subject: Test Email
-          body: This is a test email sent from GitHub Actions.
+          body: |
+                        <h2>GitHub Actions Selenium Test Run</h2>
+                        <p>Status: ${{ job.status }}</p>
+                        <p>Run ID: ${{ github.run_id }}</p>
+                        <p>Repository: ${{ github.repository }}</p>
+                        <p>Check the run details: <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Run Link</a></p>
