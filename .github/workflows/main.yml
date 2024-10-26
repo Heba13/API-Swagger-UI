@@ -1,51 +1,56 @@
 name: Selenium Test Workflow
-'on':
+
+on:
   push:
     branches:
-      - main
+      - main  # Run the workflow on pushes to the 'main' branch
   pull_request:
     branches:
-      - main
+      - main  # Run the workflow on pull requests to the 'main' branch
+
 jobs:
   run-selenium-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use an Ubuntu runner for GitHub Actions
+
     services:
+      # Set up a service to run a Selenium server
       selenium:
-        image: selenium/standalone-chrome:latest
+        image: selenium/standalone-chrome:latest  # Use the latest Chrome image
         ports:
           - 4444:4444
         options:
-          --shm-size 2g
+          --shm-size 2g  # Increase shared memory for better performance
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: 'temurin'  # Java distribution
+          java-version: '17'       # Java version, change as needed
+
       - name: Build with Maven
-        run: mvn clean compile
+        run: mvn clean compile       # Compile the project
+
       - name: Run Selenium Tests
-        id: test
         env:
-        SELENIUM_URL: http://localhost:4444/wd/hub
-        run: mvn test -Dselenium.server.url=$SELENIUM_URL
+          SELENIUM_URL: http://localhost:4444/wd/hub  # URL to Selenium server
+          run: mvn test -Dselenium.server.url=$SELENIUM_URL
+
       - name: Send Email
         uses: hilarion5/send-mail@v1
         with:
-          smtp-server: smtp.gmail.com
-          smtp-port: 587
-          smtp-secure: true
-          from-email: regression.testing08@gmail.com
-          to-email: 'heba.emam@vodafone.com.eg,heba.emam@vodafone.com'
-          username: regression.testing08@gmail.com
-          password: Reg@4321
-          subject: Test Email
-          body: |
-                        <h2>GitHub Actions Selenium Test Run</h2>
-                        <p>Status: ${{ job.status }}</p>
-                        <p>Run ID: ${{ github.run_id }}</p>
-                        <p>Repository: ${{ github.repository }}</p>
-                        <p>Check the run details: <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Run Link</a></p>
+            smtp-server: smtp.gmail.com
+            smtp-port: 465
+            smtp-secure: smtp.gmail.com
+            from-email: regression.testing08@gmail.com
+            to-email: heba.emam@vodafone.com.eg
+            username: regression.testing08@gmail.com
+            password: Reg@4321
+            subject: Test Email
+            body: This is a test email sent from GitHub Actions.
+            html: |
+              <h1>This is a test email</h1>
+              <p>Test Paragraph</p>
