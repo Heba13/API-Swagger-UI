@@ -39,7 +39,6 @@ jobs:
           SELENIUM_URL: http://localhost:4444/wd/hub  # URL to Selenium server
         run: mvn test -Dselenium.server.url=$SELENIUM_URL
 
-
       - name: Send Email
         if : ${{ always() }}
         uses: dawidd6/action-send-mail@v1.3.0
