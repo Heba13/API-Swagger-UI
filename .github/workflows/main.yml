@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.EMAIL_ADDRESS }}
           password: ${{ secrets.EMAIL_PASSWORD}}
           subject: Api report
-          to: heba.emam@vodafone.com.eg #,aya.shafei@vodafone.com.eg,sally.sedky@vodafone.com.eg  access
+          to: heba.emam@vodafone.com #,aya.shafei@vodafone.com.eg,sally.sedky@vodafone.com.eg  access
           from: ${{ secrets.EMAIL_ADDRESS }}
           body: |
             <!DOCTYPE html>
