@@ -21,7 +21,7 @@ jobs:
         options:
           --shm-size 2g  # Increase shared memory for better performance
 
-     steps:
+      steps:
       - name: Checkout code
         uses: actions/checkout@v3
 

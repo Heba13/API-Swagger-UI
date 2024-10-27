@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="Action">
+    <list default="true" id="ffd7e780-6b76-4aab-8403-69e23a45e96c" name="Changes" comment="report">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730045878806</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="report">
+      <created>1730046378832</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730046378832</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +381,8 @@
     <MESSAGE value="modify" />
     <MESSAGE value="update" />
     <MESSAGE value="Action" />
-    <option name="LAST_COMMIT_MESSAGE" value="Action" />
+    <MESSAGE value="report" />
+    <option name="LAST_COMMIT_MESSAGE" value="report" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
