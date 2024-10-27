@@ -15,6 +15,7 @@ jobs:
         ports:
           - '4444:4444'
         options: '--shm-size 2g'
+
       steps:
         - name: Checkout code
           uses: actions/checkout@v3
@@ -29,6 +30,7 @@ jobs:
           env:
             SELENIUM_URL: 'http://localhost:4444/wd/hub'
           run: mvn test -Dselenium.server.url=$SELENIUM_URL
+
         - name: Send Email
           if: '${{ always() }}'
           uses: dawidd6/action-send-mail@v1.3.0
@@ -44,8 +46,3 @@ jobs:
             to: heba.emam@vodafone.com
             from: '${{ secrets.EMAIL_ADDRESS }}'
             attachment: ./test-report.txt
-        - name: Upload test report as an artifact
-          uses: actions/upload-artifact@v3
-          with:
-            name: test-report
-            path: test-report.txt
