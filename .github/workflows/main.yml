@@ -54,8 +54,19 @@ jobs:
           username: ${{ secrets.EMAIL_ADDRESS }}
           password: ${{ secrets.EMAIL_PASSWORD}}
           subject: Api report
-          body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
-          to: hebaibrahim.emam@gmail.com
+          to: heba.emam@vodafone.com.eg #,aya.shafei@vodafone.com.eg,sally.sedky@vodafone.com.eg  access
           from: ${{ secrets.EMAIL_ADDRESS }}
           attachment: "./test-report.txt"
+          body: |
+            <!DOCTYPE html>
+            <html>
+            <body>
+              <h1>Test Report</h1>
+              <p>Dear team,</p>
+              <p>${{ github.actor }} just run action on repo ${{ github.repository }}</p>
+              <p>Please find the attached test report.</p>
+              <p>Best regards,<br>Your CI/CD System</p>
+            </body>
+            </html>
+            content_type: text/html
 
