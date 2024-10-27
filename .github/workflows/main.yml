@@ -67,5 +67,5 @@ jobs:
               <p>Best regards,<br>Your CI/CD System</p>
             </body>
             </html>
-            content_type: text/html
+          content_type: text/html
 
