@@ -1,65 +1,51 @@
 name: Selenium Test Workflow
-
-on:
+'on':
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
-
 jobs:
   run-selenium-tests:
     runs-on: ubuntu-latest
-
     services:
-      # Set up a service to run a Selenium server
       selenium:
-        image: selenium/standalone-chrome:latest  # Use the latest Chrome image
+        image: 'selenium/standalone-chrome:latest'
         ports:
-          - 4444:4444
-        options:
-          --shm-size 2g  # Increase shared memory for better performance
-
+          - '4444:4444'
+        options: '--shm-size 2g'
       steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'  # Java distribution
-          java-version: '17'       # Java version, change as needed
-
-      - name: Build with Maven
-        run: mvn clean compile       # Compile the project
-
-      - name: Run Selenium Tests
-        env:
-          SELENIUM_URL: http://localhost:4444/wd/hub  # URL to Selenium server
-        run: mvn test -Dselenium.server.url=$SELENIUM_URL
-
-
-      - name: Send Email
-        if : ${{ always() }}
-        uses: dawidd6/action-send-mail@v1.3.0
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_ADDRESS }}
-          password: ${{ secrets.EMAIL_PASSWORD}}
-          subject: Api report
-          body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
-          to: heba.emam@vodafone.com
-          from: ${{ secrets.EMAIL_ADDRESS }}
-
-
-      - name: Upload test report as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-           name: test-report
-           path: test-report.txt
-
-      - name: Notify via webhook (optional)
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d "{\"text\": \"Java test report available.\"}" https://your-webhook-url
+        - name: Checkout code
+          uses: actions/checkout@v3
+        - name: Set up Java
+          uses: actions/setup-java@v3
+          with:
+            distribution: temurin
+            java-version: '17'
+        - name: Build with Maven
+          run: mvn clean compile
+        - name: Run Selenium Tests
+          env:
+            SELENIUM_URL: 'http://localhost:4444/wd/hub'
+          run: mvn test -Dselenium.server.url=$SELENIUM_URL
+        - name: Send Email
+          if: '${{ always() }}'
+          uses: dawidd6/action-send-mail@v1.3.0
+          with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            username: '${{ secrets.EMAIL_ADDRESS }}'
+            password: '${{ secrets.EMAIL_PASSWORD}}'
+            subject: Api report
+            body: >-
+              ${{ github.actor }} just starred your mail-on-star repo!!! ${{
+              github.repository }}
+            to: heba.emam@vodafone.com
+            from: '${{ secrets.EMAIL_ADDRESS }}'
+            attachment: ./test-report.txt
+        - name: Upload test report as an artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: test-report
+            path: test-report.txt
