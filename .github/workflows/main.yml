@@ -56,7 +56,6 @@ jobs:
           subject: Api report
           to: heba.emam@vodafone.com.eg #,aya.shafei@vodafone.com.eg,sally.sedky@vodafone.com.eg  access
           from: ${{ secrets.EMAIL_ADDRESS }}
-          attachment: "./test-report.txt"
           body: |
             <!DOCTYPE html>
             <html>
