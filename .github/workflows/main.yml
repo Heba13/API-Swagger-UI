@@ -3,14 +3,14 @@ name: Selenium Test Workflow
 on:
   push:
     branches:
-      - main  # Run the workflow on pushes to the 'main' branch
+      - main
   pull_request:
     branches:
-      - main  # Run the workflow on pull requests to the 'main' branch
+      - main
 
 jobs:
   run-selenium-tests:
-    runs-on: ubuntu-latest  # Use an Ubuntu runner for GitHub Actions
+    runs-on: ubuntu-latest
 
     services:
       # Set up a service to run a Selenium server
@@ -41,18 +41,14 @@ jobs:
 
 
       - name: Send Email
-        uses: dawidd6/action-send-mail@v3
+        if : ${{ always() }}
+        uses: dawidd6/action-send-mail@v1.3.0
         with:
-            smtp-server: smtp.gmail.com
-            smtp-port: 587
-            smtp-secure: false
-            from-email: regression.testing08@gmail.com
-            to-email: heba.emam@vodafone.com.eg,heba.emam@vodafone.com
-            username: regression.testing08@gmail.com
-            password: Reg@4321
-            subject: Test Email
-            content_type: text/html
-            body: This is a test email sent from GitHub Actions.
-            html: |
-              <h1>This is a test email</h1>
-              <p>Test Paragraph</p>
+              server_address: smtp.gmail.com
+              server_port: 465
+              username: ${{ secrets.EMAIL_ADDRESS }}
+              password: ${{ secrets.EMAIL_PASSWORD}}
+              subject: Api report
+              body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
+              to: ${{ secrets.EMAIL_ADDRESS }}
+              from: ${{ secrets.EMAIL_ADDRESS }}
