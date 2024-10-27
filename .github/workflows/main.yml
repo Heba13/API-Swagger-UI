@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
            name: test-report
-           path: test-report.txt
+           path: .github/workflows/test-report.txt
 
       - name: Send Email
         if : ${{ always() }}
