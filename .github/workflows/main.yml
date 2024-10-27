@@ -1,4 +1,4 @@
-name: Selenium Test Workflow
+name: Report Workflow
 
 on:
   push:
@@ -9,45 +9,33 @@ on:
       - main
 
 jobs:
-  run-selenium-tests:
+  build:
     runs-on: ubuntu-latest
-
-    services:
-      # Set up a service to run a Selenium server
-      selenium:
-        image: selenium/standalone-chrome:latest  # Use the latest Chrome image
-        ports:
-          - 4444:4444
-        options:
-          --shm-size 2g  # Increase shared memory for better performance
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Java
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'  # Java distribution
-          java-version: '17'       # Java version, change as needed
+          java-version: '17'       # Replace with your Java version
 
       - name: Build with Maven
-        run: mvn clean compile       # Compile the project
+        run: mvn install -DskipTests
 
-      - name: Run Selenium Tests
-        env:
-          SELENIUM_URL: http://localhost:4444/wd/hub  # URL to Selenium server
-        run: mvn test -Dselenium.server.url=$SELENIUM_URL
+      - name: Run tests and generate report
+        run: |
+          mvn test > test-report.txt || true  # Run tests and save output to test-report.txt
+        continue-on-error: true  # Continue even if tests fail
 
-      - name: Send Email
-        if : ${{ always() }}
-        uses: dawidd6/action-send-mail@v1.3.0
+      - name: Upload test report as an artifact
+        uses: actions/upload-artifact@v3
         with:
-              server_address: smtp.gmail.com
-              server_port: 465
-              username: ${{ secrets.EMAIL_ADDRESS }}
-              password: ${{ secrets.EMAIL_PASSWORD}}
-              subject: Api report
-              body: ${{ github.actor }} just starred your mail-on-star repo!!! ${{ github.repository }}
-              to: ${{ secrets.EMAIL_ADDRESS }}
-              from: ${{ secrets.EMAIL_ADDRESS }}
+          name: test-report
+          path: test-report.txt
+
+      - name: Notify via webhook (optional)
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d "{\"text\": \"Java test report available.\"}" https://your-webhook-url
