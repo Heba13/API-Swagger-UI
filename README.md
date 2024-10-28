@@ -23,6 +23,8 @@ Run "ChargingRunner" file in path "src/test/java/swagger/test/ChargingRunner.jav
 - src/test/resources: Contains Schema file written in jSON "schema.json" .
 - src/test/java/swagger/endpoint: Contains Api classes and step definition implementation using Rest assured library.
 - pom.xml: Maven project configuration file containing dependencies and plugins.
+- .github/workflows contains main.yml for run action on git hub and generate test-report.txt
+- 
 
 - ## Test Reporting
   Test reports are generated automatically after running "ChargingRunner" file.
