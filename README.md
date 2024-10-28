@@ -30,5 +30,6 @@ Run "ChargingRunner" file in path "src/test/java/swagger/test/ChargingRunner.jav
   Open Charging-Report.html in a web browser to view the test report.
 
 - ## Media 
+- https://drive.google.com/file/d/13lUfUFDKznwUVgA0jhc_L44jrf3Jm0OT
 - 
 
